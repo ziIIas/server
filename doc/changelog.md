@@ -1,9 +1,23 @@
-# v0.14.3 -> v0.14.4
+# v0.14.5 -> v0.14.6
 
+## Bugfixes
+
+- Fixed upate script v0.14.4 -> v0.14.5 where some hash types were incorrectly named due to double quotes and dollar signs in names
+
+# v0.14.4 -> v0.14.5
+
+## Enhancements
+
+- Include new agent compatible with hashcat 7.0.0+ (note 7.1.0 and 7.1.1 are not compatible due to an issue in hashcat, see https://github.com/hashcat/hashcat/issues/4446)
+- Added three more indexes in MySQL to improve the task view drastically (Note: these are not created on update due to performance issues, only on new installs)
+- Added an additional multi-column index in MySQL on the chunk table to increase performance for agents getting tasks (Note: these are not created on update due to performance issues, only on new installs)
+
+# v0.14.3 -> v0.14.4
 
 ## Enhancements
 
 - Use utf8mb4 as default encoding in order to support the full unicode range
+- Log hashes when they are skipped. This way the administrator can detect when Hashcat rebuilds the hashes incorrectly 
 
 ## Bugfixes
 
